@@ -2,6 +2,8 @@
 
 .container {
   position: relative;
+  display: inline-block;
+  background: yellow;
   width: calc(100% - 20px);
   min-height: 548px;
   max-width: 520px;
@@ -10,6 +12,7 @@
   background: $colorWhite;
   box-sizing: border-box;
   font-family: 'Roboto Slab';
+  overflow: hidden;
 
   @media screen and (max-width: 520px) {
     width: 100%;
@@ -24,6 +27,42 @@
     left: 50%;
     transform: translate(-50%,-50%);
     border: 1px solid lightgray;
+  }
+
+  // Bg for footer bars on iPhone 6, 6S, 7
+  @media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 667px)
+  and (-webkit-device-pixel-ratio: 2) {
+    height: calc(100vh - 69px);
+    min-height: inherit;
+  }
+
+  // Bg for footer bars on iPhone 6 Plus, 7 Plus
+  @media only screen
+  and (min-device-width: 414px)
+  and (max-device-width: 736px)
+  and (-webkit-device-pixel-ratio: 2) {
+    height: calc(100vh - 69px);
+    min-height: inherit;
+  }
+
+  // Bg for footer bars on iPhone 5, 5S
+  @media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-device-pixel-ratio: 2) {
+    height: calc(100vh - 69px);
+    min-height: inherit;
+  }
+
+  // Bg for footer bars on iPhone 4, 4S
+  @media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px)
+  and (-webkit-device-pixel-ratio: 2) {
+    height: calc(100vh - 69px);
+    min-height: inherit;
   }
 
 }
@@ -85,7 +124,7 @@
   height: 50vw;
   max-height: 324px;
   display: inline-block;
-  margin: 8px auto 0;
+  margin: 6px auto 0;
   background: url(http://static.panoramio.com/photos/large/71720376.jpg) center no-repeat;
   background-size: cover;
   animation: fadeIn .8s forwards;
@@ -103,6 +142,38 @@
     line-height: 6vw;
     padding: 14px 0
 	}
+
+  // Smaller font-size on iPhone 6, 6S, 7
+  @media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 667px)
+  and (-webkit-device-pixel-ratio: 2) {
+    font-size: 5vw;
+  }
+
+  // Smaller font-size on iPhone 6 Plus, 7 Plus
+  @media only screen
+  and (min-device-width: 414px)
+  and (max-device-width: 736px)
+  and (-webkit-device-pixel-ratio: 2) {
+    font-size: 5vw;
+  }
+
+  // Smaller font-size on iPhone 5, 5S
+  @media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-device-pixel-ratio: 2) {
+    font-size: 5vw;
+  }
+
+  // Smaller font-size on iPhone 4, 4S
+  @media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px)
+  and (-webkit-device-pixel-ratio: 2) {
+    font-size: 5vw;
+  }
 
 }
 
@@ -133,6 +204,38 @@
     font-size: 4.4vw;
     line-height: 4.4vw;
 	}
+
+  // Saving space because of footer bar on iPhone 6, 6S, 7
+  @media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 667px)
+  and (-webkit-device-pixel-ratio: 2) {
+    height: 14vw;
+  }
+
+  // Saving space because of footer bar on iPhone 6 Plus, 7 Plus
+  @media only screen
+  and (min-device-width: 414px)
+  and (max-device-width: 736px)
+  and (-webkit-device-pixel-ratio: 2) {
+    height: 14vw;
+  }
+
+  // Saving space because of footer bar on iPhone 5, 5S
+  @media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-device-pixel-ratio: 2) {
+    height: 14vw;
+  }
+
+  // Saving space because of footer bar on iPhone 4, 4S
+  @media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px)
+  and (-webkit-device-pixel-ratio: 2) {
+    height: 14vw;
+  }
 
   &.answer1 {
     animation-delay: 0;
@@ -187,7 +290,7 @@
   top: 0;
   left: 0;
   width: 0;
-  height: 8px;
+  height: 6px;
   background: lightblue;
   animation: timer 9s linear forwards;
 

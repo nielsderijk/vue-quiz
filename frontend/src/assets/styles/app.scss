@@ -10,5 +10,13 @@ html {
 }
 
 body {
-    background-color: $colorBody;
+  background: $colorBody;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+
+  @include respond-to('X_SMALL') {
+    background: white !important;
+  }
+
 }
