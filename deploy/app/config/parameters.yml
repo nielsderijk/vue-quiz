@@ -1,0 +1,25 @@
+parameters:
+    secret: 5EqPm0eu7EQ2cQ1lIMb9My9eq5K6vL084c2nF/Ba
+
+    encryption_key: qn8LZfFa4uAETd5/IQzKIqVlmGfBIH82HuEeD6zntT3uUMw183unwXM+E1Q5K/z/
+
+    synchronize_guests_key: 560wmnat8KDCsLhuWmbhfBESZZbNl8WbT3th835KTHFeHKh0AGQ-RGxEI724LQH2
+
+    locale: en
+
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: null
+    mailer_password: null
+
+    awss3_bucket: ""
+    awss3_key: ""
+    awss3_secret: ""
+    awss3_version: "2006-03-01"
+    awss3_region: "us-west-1"
+    awss3_scheme: "https"
+    awss3_prefix: "data"
+
+    admin_directory: RYW9ap2byFHST5cZ
+
+    asset_version: src #[deploytool]

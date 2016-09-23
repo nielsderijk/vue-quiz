@@ -1,0 +1,15 @@
+export const STATUS_VR1_NEW = 0;
+export const STATUS_VR1_ASSIGNED = 1;
+export const STATUS_VR1_CLAIMED = 2;
+export const STATUS_VR1_ACTIVE = 3;
+export const STATUS_VR1_RESTARTED = 4;
+export const STATUS_VR1_INTERRUPTED = 5;
+export const STATUS_VR1_FINISHED = 6;
+export const STATUS_VR2_NEW = 7;
+export const STATUS_VR2_ASSIGNED = 8;
+export const STATUS_VR2_CLAIMED = 9;
+export const STATUS_VR2_ACTIVE = 10;
+export const STATUS_VR2_RESTARTED = 11;
+export const STATUS_VR2_INTERRUPTED = 12;
+export const STATUS_VR2_FINISHED = 13;
+export const STATUS_REMOVED = 14;

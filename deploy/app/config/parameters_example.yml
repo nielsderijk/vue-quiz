@@ -1,0 +1,13 @@
+parameters:
+    database_driver: pdo_mysql
+    database_host: localhost
+    database_port: 3306
+    database_name: toyota-vr-installation-share-page
+    database_user: root
+    database_password: null
+
+    awss3_bucket: "your_bucket_name"
+    awss3_key: "your_key"
+    awss3_secret: "your_secret"
+    awss3_scheme: "http"
+    awss3_prefix: "toyota-vr-installation/your_name"

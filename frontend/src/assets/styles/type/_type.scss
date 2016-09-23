@@ -1,0 +1,274 @@
+// Text selection
+::selection {
+    background: #181818;
+    color: #F7F7F7;
+}
+
+::-moz-selection {
+    background: #181818;
+    color: #F7F7F7;
+}
+
+// Headings
+
+.heading {
+    &.h1 {
+      font: 1.6rem/1.2em $fontHelveticaLTStd-Regular;
+      //letter-spacing: 0.05em;
+      text-transform: uppercase;
+      letter-spacing: 0.4em;
+      color: currentColor;
+    }
+
+    &.h2 {
+      font: 1.8rem/1.2em $fontHelveticaLTStd-Bold;
+      //letter-spacing: 0.05em;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: $colorRed;
+    }
+
+    &.h4 {
+      font: 3rem $fontHelveticaLTStd-Bold;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: $colorRed;
+    }
+
+    &.h5 {
+      font: 3.6rem/1.2em $fontHelveticaLTStd-Bold;
+      letter-spacing: 0.02em;
+      color: currentColor;
+    }
+
+    &.h6 {
+      font: 3rem/1.2em $fontHelveticaLTStd-Medium;
+      letter-spacing: 0.03em;
+      color: $colorWhite;
+    }
+
+    &.h7 {
+      font: 2.4rem/1.2em $fontHelveticaLTStd-Light;
+      letter-spacing: 0.02em;
+      color: $colorWhite;
+    }
+
+    &.h10 {
+      font: 5rem/1.5em $fontHelveticaLTStd-Thin;
+      letter-spacing: 0.01em;
+      color: currentColor;
+
+      @include respond-to('SMALL') {
+        font: 3.6rem/1.4em $fontHelveticaLTStd-Light;
+        color: currentColor;
+      }
+
+    }
+
+    &.h11 {
+
+      letter-spacing: 0.01em;
+      color: currentColor;
+
+      @include respond-to('LARGE') {
+        font: 3.2rem/1.35em $fontHelveticaLTStd-Light;
+        color: currentColor;
+      }
+
+      @include respond-to('X_LARGE') {
+        font: 4rem/1.35em $fontHelveticaLTStd-Light;
+        color: currentColor;
+      }
+
+      @include respond-to('MEDIUM') {
+        margin-bottom: 8px;
+        font: 2.5rem/1em $fontHelveticaLTStd-Light;
+        color: currentColor;
+      }
+
+      @include respond-to('SMALL') {
+        margin-bottom: 2px;
+        font: 3.5rem/1.4em $fontHelveticaLTStd-Light;
+        letter-spacing: 0;
+        color: currentColor;
+      }
+
+    }
+
+}
+
+// Copy
+.copy {
+    &.c1 {
+        font: 1.5rem/1.1em $fontHelveticaLTStd-Regular;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: currentColor;
+
+        a {
+            color: currentColor;
+        }
+    }
+
+    &.c2 {
+      font: 1.2rem/1.8em $fontHelveticaLTStd-Regular;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: currentColor;
+    }
+
+    &.c3 {
+      font: 1.2rem/1.5em $fontHelveticaLTStd-Regular;
+      letter-spacing: 0.05em;
+      color: currentColor;
+    }
+
+    &.c4 {
+      font: 3.4rem/1.5em $fontHelveticaLTStd-Light;
+      letter-spacing: 0.05em;
+      color: currentColor;
+    }
+
+    &.c5 {
+      font: 2.5rem/1.5em $fontHelveticaLTStd-Light;
+      letter-spacing: 0.05em;
+      color: $colorBlack;
+    }
+
+    &.c6 {
+      font: 1.05rem/1.1em $fontHelveticaLTStd-Light;
+      letter-spacing: 0.1em;
+      color: $colorBlack;
+    }
+
+    &.c10 {
+      font: 1.6rem/1.6em $fontHelveticaLTStd-Light;
+      letter-spacing: 0.01em;
+      color: $colorBlack;
+
+      @include respond-to('SMALL') {
+        font: 1.88rem/1.6em $fontHelveticaLTStd-Light;
+        color: currentColor;
+      }
+
+    }
+
+    &.c11 {
+      letter-spacing: 0.01em;
+
+      @include respond-to('LARGE') {
+        font: 1.5rem/1.6em $fontHelveticaLTStd-Light;
+        color: currentColor;
+      }
+
+      @include respond-to('X_LARGE') {
+        font: 1.6rem/1.7em $fontHelveticaLTStd-Light;
+        color: currentColor;
+      }
+
+      @include respond-to('MEDIUM') {
+        font: 1.2rem/1.5em $fontHelveticaLTStd-Light;
+        color: currentColor;
+      }
+
+      @include respond-to('SMALL') {
+        font: 1.55rem/1.7em $fontHelveticaLTStd-Regular;
+        color: currentColor;
+        letter-spacing: 0;
+      }
+
+    }
+
+    &.show {
+      letter-spacing: 0;
+
+      @include respond-to('LARGE') {
+        font: small-caps 1.5rem/1.6em $fontHelveticaLTStd-Medium;
+        color: currentColor;
+      }
+
+      @include respond-to('X_LARGE') {
+        font: small-caps 1.8rem/1.5em $fontHelveticaLTStd-Medium;
+        color: currentColor;
+      }
+
+      @include respond-to('MEDIUM') {
+        font: small-caps 1.2rem/1.5em $fontHelveticaLTStd-Medium;
+        color: currentColor;
+      }
+
+      @include respond-to('SMALL') {
+        font: small-caps 2.2rem/1.7em $fontHelveticaLTStd-Regular;
+        color: currentColor;
+      }
+
+    }
+
+}
+
+//Guest page
+
+.time-remaining {
+  color: $colorBlack;
+
+  .title {
+    font: 2.4rem/1em $fontHelveticaLTStd-Regular;
+    letter-spacing: 0.02em;
+  }
+
+  .time {
+    font: 10rem/1.7em $fontHelveticaLTStd-Bold;
+    letter-spacing: 0.06em;
+  }
+
+  .complete {
+    font: 5.6rem/3.8em $fontHelveticaLTStd-Bold;
+  }
+
+}
+
+.details {
+
+  .time {
+    font-family: $fontHelveticaLTStd-Bold;
+  }
+
+}
+
+//Form elements
+.form {
+
+  .label {
+    font: 1.5rem/1.32em $fontHelveticaLTStd-Regular;
+    color: $colorBlack;
+  }
+
+  .input.conditions {
+    font: 1rem/1.2em $fontHelveticaLTStd-Regular;
+    color: $colorBlack;
+  }
+
+}
+
+
+// Exceptions
+
+.strong {
+  font-weight: 700;
+}
+
+&.bordered {
+    position: relative;
+    padding-top: 20px;
+
+    &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100px;
+        height: 1px;
+        background-color: $colorBlack;
+    }
+}

@@ -1,0 +1,25 @@
+{% extends 'AppFrontEndBundle::build.html.twig' %}
+
+{% block metaTitle %}I participated in 'The Impossible Quest'{% endblock %}
+{% block metaDescription %}Let's imagine the new possible. #TechCrunchDisrupt2016 #PriusPrime{% endblock %}
+{% block metaImage %}{{ imageUrl }}{% endblock %}
+
+{% block body %}
+
+<script>
+
+    var guest = {
+        'source': '{{ source }}',
+        'firstName': '{{ firstName }}',
+        'imageUrl': '{{ imageUrl }}',
+        'shareUrl': '{{ shareUrl }}',
+        'random360VideoId': {{ random360VideoId }},
+        'shareTitle': "{{ block('metaTitle') }}",
+        'shareDescription': "Let's imagine the new possible. #TechCrunchDisrupt2016 #PriusPrime",
+        'hashtags': 'TechCrunchDisrupt2016, PriusPrime',
+        'videoId': 'tE4G0vBTbvw',
+    };
+
+</script>
+
+{% endblock %}

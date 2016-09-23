@@ -1,0 +1,14 @@
+@import 'utility/normalize';
+@import 'resource/resource';
+@import 'type/font';
+@import 'type/type';
+@import 'ui/ui';
+@import 'layout/layout';
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: $colorBody;
+}

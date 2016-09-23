@@ -1,0 +1,16 @@
+parameters:
+    database_driver: pdo_mysql
+    database_host: tdubgexs2wk9k5.cpgsmvgvaav3.us-west-1.rds.amazonaws.com
+    database_port: 3306
+    database_name: toyotausuat
+    database_user: toyotausuat
+    database_password: yO0n2Vp6NLp7jigTPDA2JlFCV0u2lvh7
+
+    mailer_transport: smtp
+    mailer_host: "email-smtp.us-east-1.amazonaws.com"
+    mailer_user: "AKIAJXYVQ3QCQB6FDL7Q"
+    mailer_password: "AvWXZH/SMr4aD2ouoK2Dx5qbGeRsicW3YVS3ueb1Jx5C"
+
+    awss3_bucket: "toyota-vr-installation-uat-s3bucket-la432alx6be2"
+    awss3_key: "AKIAI6GPNBVE4DDZ3FOA"
+    awss3_secret: "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"

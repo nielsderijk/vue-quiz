@@ -1,0 +1,84 @@
+imports:
+    - { resource: parameters.yml }
+    - { resource: doctrine/config.yml }
+    - { resource: sonata/config.yml }
+    - { resource: fos/config.yml }
+    - { resource: security.yml }
+    - { resource: services.yml }
+
+framework:
+    translator:
+        fallbacks: ["%locale%"]
+    secret: "%secret%"
+    router:
+        resource: "%kernel.root_dir%/config/routing.yml"
+        strict_requirements: ~
+    form:            ~
+    csrf_protection: ~
+    validation:
+        enable_annotations: true
+    serializer:
+        enable_annotations: true
+    templating:
+        engines: ['twig']
+    default_locale: "%locale%"
+    trusted_hosts: ~
+    trusted_proxies: ~
+    session:
+        handler_id: session.handler.pdo
+    fragments: ~
+    http_method_override: true
+
+twig:
+    debug: "%kernel.debug%"
+    strict_variables: "%kernel.debug%"
+    globals:
+        env: "%kernel.environment%"
+        asset_version: "%asset_version%"
+        s3_url_generator: "@app.s3_url_generator"
+
+swiftmailer:
+    transport: "%mailer_transport%"
+    host: "%mailer_host%"
+    username: "%mailer_user%"
+    password: "%mailer_password%"
+    encryption: "ssl"
+
+tactician:
+    commandbus:
+        default:
+            middleware:
+                - tactician.middleware.locking
+                - tactician.middleware.validator
+                - tactician.middleware.command_handler
+
+oneup_flysystem:
+    adapters:
+        artwork_images_adapter:
+            awss3v3:
+                client: app.s3_client
+                bucket: "%awss3_bucket%"
+                prefix: "%awss3_prefix%"
+    filesystems:
+        artwork_images:
+            adapter: artwork_images_adapter
+
+nelmio_api_doc:
+    name: "API"
+    exclude_sections: ["Auth"]
+    cache:
+        enabled: false
+    sandbox:
+        enabled: true
+        endpoint: ~
+        accept_type: "application/json"
+        body_format:
+            formats: [ "form", "json" ]
+            default_format: form
+        request_format:
+            formats:
+                json: "application/json"
+                xml: "application/xml"
+            method: "format_param"
+            default_format: "json"
+        entity_to_choice: true

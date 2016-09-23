@@ -1,0 +1,77 @@
+parameters:
+    fos_user.user_manager.class: App\CoreBundle\Manager\UserManager
+
+services:
+    session.handler.pdo:
+        class: Symfony\Component\HttpFoundation\Session\Storage\Handler\PdoSessionHandler
+        public: false
+        arguments:
+            - 'mysql:host=%database_host%;port=%database_port%;dbname=%database_name%'
+            - { db_username: %database_user%, db_password: %database_password% }
+
+    zend.crypt.symmetric_encrypter:
+        class: Zend\Crypt\Symmetric\Mcrypt
+        lazy: true
+        calls:
+            - ['setKey', ['%encryption_key%']]
+
+    mediamonks.doctrine.transformable.transformer.zend_crypt_symmetric:
+        class: App\CoreBundle\Transformer\SymmetricTransformer
+        lazy: true
+        arguments:
+            - '@zend.crypt.symmetric_encrypter'
+            - { binary: false }
+
+    mediamonks.doctrine.transformable.transformer.zend_crypt_hash:
+        class: MediaMonks\Doctrine\Transformable\Transformer\ZendCryptHashTransformer
+        lazy: true
+        arguments:
+            - { method: sha512, binary: false }
+
+    mediamonks.doctrine.transformable.transformer_pool:
+        class: MediaMonks\Doctrine\Transformable\Transformer\TransformerPool
+        calls:
+            - ['set', ['encrypt', '@mediamonks.doctrine.transformable.transformer.zend_crypt_symmetric']]
+            - ['set', ['hash', '@mediamonks.doctrine.transformable.transformer.zend_crypt_hash']]
+
+    doctrine.transformable.subscriber:
+        class: MediaMonks\Doctrine\Transformable\TransformableSubscriber
+        arguments:
+            - '@mediamonks.doctrine.transformable.transformer_pool'
+        tags:
+         - { name: doctrine.event_subscriber}
+
+    app.user_voter:
+        class: App\AdminBundle\Security\UserVoter
+        tags:
+            - { name: security.voter }
+        public: false
+
+    app.s3_client:
+        class: Aws\S3\S3Client
+        arguments:
+            -
+                version: '%awss3_version%'
+                region: '%awss3_region%'
+                scheme: '%awss3_scheme%'
+                credentials:
+                    key: '%awss3_key%'
+                    secret: '%awss3_secret%'
+
+    app.s3_url_generator:
+        class: App\CoreBundle\Service\S3UrlGenerator
+        arguments:
+            - '@oneup_flysystem.artwork_images_filesystem'
+
+    app.handlers.guest.receive:
+        class: Domain\Handler\ReceiveGuestHandler
+        arguments:
+            - '%synchronize_guests_key%'
+            - '@doctrine.orm.entity_manager'
+            - '@oneup_flysystem.artwork_images_filesystem'
+            - '@router'
+            - '@app.s3_url_generator'
+            - '@templating'
+            - '@mailer'
+        tags:
+            - { name: "tactician.handler", command: Domain\Command\ReceiveGuestCommand }

@@ -1,0 +1,153 @@
+/*
+ * Wrapper
+ * Centers the content based on site width.
+ */
+.wrapper {
+    width: 100%;
+    max-width: $sizeSiteWidth;
+    margin: 0 auto;
+    padding: 0 40px;
+
+    // For smaller screen the wrapper will be 100% with a 20px padding
+    @include respond-to('MEDIUM') {
+        padding: 0 20px;
+    }
+}
+
+/*
+ * Main container with background
+ */
+.container-main {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 1024px;
+  margin: 0 auto;
+  color: $colorWhite;
+  background: url('~assets/images/main-bg.jpg') no-repeat;
+  background-size: cover;
+  overflow: hidden;
+
+  .scroller-frame {
+    width: 100%;
+    height: 100%;
+    transition: all 200ms ease-out;
+
+    &.is-open {
+      transform: translateX(384px);
+    }
+
+  }
+}
+
+/*
+ * Heading and copy
+ */
+.heading, .copy {
+  padding: 0;
+  margin: 0;
+}
+
+/*
+ * Footer bar with Toyota logo
+ */
+.footer {
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   width: 100%;
+   height: 150px;
+
+   .footer-top {
+      background: url('~assets/images/main-footer.png') top center no-repeat;
+      background-size: 100% 148px;
+      height: 82px;
+   }
+
+   .footer-bottom {
+     position: relative;
+      background: $colorWhite;
+      height: 68px;
+   }
+
+   .logo {
+     position: absolute;
+     top: 130px;
+     width: 430px;
+     height: 148px;
+     background-size: 430px auto;
+   }
+
+}
+
+/*
+ * Fullscreen
+ * Wraps content in a fullscreen element. When the content is longer than the viewport the element will stretch
+ */
+.fullscreen {
+    overflow: hidden;
+    width: 100%;
+    min-height: 100vh;
+    padding: 40px 0;
+    z-index: 2;
+
+    // Vertically align all content
+    &.vertical-align {
+        display: flex;
+        box-orient: vertical;
+        align-items: center;
+        justify-content: center;
+    }
+
+    // Group content, used for grouping elements since flexbox needs 1 child for vertical alignment
+    .group-content {
+        display: block;
+        width: 100%;
+    }
+}
+
+/*
+ * Columns
+ * Full width columns based on the parents width
+ */
+.columns {
+    display: flex;
+
+    .col {
+        flex: 1 1 auto;
+    }
+
+    // 3 Columns (1/3)
+    &.col3 {
+        flex-wrap: wrap;
+
+        .col {
+            width: 100% * (1/3);
+            height: 0;
+            padding: 20px;
+            padding-bottom: 100% * (1/3) !important;
+        }
+    }
+
+    // 4 Columns (1/4)
+    &.col4 {
+        flex-wrap: wrap;
+
+        .col {
+            width: 100% * (1/4);
+            height: 0;
+            padding: 20px;
+            padding-bottom: 100% * (1/4) !important;
+        }
+    }
+}
+
+// Quest logo
+.quest-logo {
+   background: url('~assets/images/logo-quest.png') no-repeat;
+}
+
+// Toyota logo
+.toyota-logo {
+   background: url('~assets/images/logo-toyota.png') no-repeat;
+}

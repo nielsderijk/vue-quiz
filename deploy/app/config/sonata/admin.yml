@@ -1,0 +1,4 @@
+sonata_admin:
+    title: "Toyota VR"
+    security:
+        handler: sonata.admin.security.handler.role

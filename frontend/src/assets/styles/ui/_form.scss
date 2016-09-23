@@ -1,0 +1,30 @@
+.input {
+    @extend %reset-input;
+
+    &.default {
+        display: inline-block;
+        width: 100%;
+        padding: 10px;
+        background-color: $colorWhite;
+        border-radius: 5px;
+        border: 1px solid $colorGrey;
+        font: 1.5rem/0.9em $fontHelveticaLTStd-Regular;
+        letter-spacing: 0.07em;
+        color: $colorBlack;
+    }
+
+}
+
+.errors {
+    @extend %reset-list;
+    display: inline-block;
+    font: 1.5rem $fontHelveticaLTStd-BoldItalic;
+    letter-spacing: 0.08em;
+    color: $colorRed;
+}
+
+.checkbox {
+  .label {
+    margin: 0 12px 0 0;
+  }
+}

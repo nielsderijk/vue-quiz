@@ -1,0 +1,170 @@
+.button {
+
+    // Primary
+    &.primary {
+        transition: background 100ms ease-out;
+        padding: 12px 24px 10px 24px;
+        background-color: $colorRed;
+        border: 1px solid transparent;
+        border-radius: 24px;
+        font: 1.8rem/1.6em $fontHelveticaLTStd-Bold;
+        letter-spacing: 0.08em;
+        text-align: center;
+        text-decoration: none;
+        color: $colorWhite;
+
+        &.white {
+          background-color: $colorWhite !important;
+          color: $colorRed !important;
+          border: 2px solid $colorWhite !important;
+        }
+
+        &.inverted {
+          background-color: transparent;
+          border: 1px solid $colorMenuLine !important;
+        }
+
+        &.inverted2, &.inverted3, &.white {
+          width: 170px;
+          padding: 15px 10px 14px 10px;
+          background-color: transparent;
+          font: 1.4rem/1.3em $fontHelveticaLTStd-Medium;
+          letter-spacing: 0.02em;
+
+          @include respond-to('MEDIUM') {
+            width: 130px;
+            padding: 13px 4px 11px 4px;
+            font: 1.1rem/1.3em $fontHelveticaLTStd-Medium;
+            line-height: 1.3em;
+          }
+
+          @include respond-to('SMALL') {
+            width: 182px;
+            padding: 14px 8px 14px 8px !important;
+            font: 1.5rem/1.3em $fontHelveticaLTStd-Medium;
+          }
+
+        }
+
+        &.inverted2 {
+          border: 2px solid $colorWhite !important;
+        }
+
+        &.inverted3 {
+          border: 2px solid $colorBlack !important;
+          color: $colorBlack;
+        }
+
+        span,
+        span:after,
+        span:before {
+            transition: all 200ms ease-out;
+            position: absolute;
+            display: block;
+            width: 4px;
+            height: 4px;
+            border-radius: 100%;
+            background-color: $colorWhite;
+            color: $colorRed;
+        }
+
+        span {
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+
+            &:before,
+            &:after {
+                content: '';
+            }
+
+            &:before {
+                left: -5px;
+                top: -5px;
+            }
+
+            &:after {
+                left: -5px;
+                top: 5px;
+            }
+        }
+
+        &:hover {
+            span {
+                right: 15px;
+            }
+        }
+
+        &:hover {
+            background-color: $colorWhite;
+            border: 1px solid $colorGrey;
+            color: $colorRed;
+
+            span,
+            span:after,
+            span:before {
+                background-color: $colorWhite;
+            }
+        }
+
+        &:disabled {
+          background: $colorHairline;
+          color: $colorBlack;
+          opacity: 0.3;
+
+          &:hover {
+            border: none;
+          }
+
+        }
+
+        &.inverted:hover {
+            border: 1px solid $colorGrey;
+            background-color: $colorWhite;
+            color: $colorGrey;
+
+            span,
+            span:after,
+            span:before {
+                background-color: $colorWhite;
+            }
+        }
+
+        &.inverted2:hover {
+            border: 1px solid $colorBlack;
+            background-color: $colorWhite;
+            color: $colorBlack;
+
+            span,
+            span:after,
+            span:before {
+                background-color: $colorWhite;
+            }
+        }
+
+        &.inverted3:hover {
+            border: 1px solid $colorBlack;
+            background-color: $colorBlack;
+            color: $colorWhite;
+
+            span,
+            span:after,
+            span:before {
+                background-color: $colorWhite;
+            }
+        }
+
+        &.white:hover {
+            border: 2px solid $colorWhite !important;
+            background-color: transparent !important;
+            color: $colorWhite !important;
+
+            span,
+            span:after,
+            span:before {
+                background-color: $colorWhite;
+            }
+        }
+
+    }
+}
