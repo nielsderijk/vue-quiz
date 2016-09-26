@@ -43,6 +43,7 @@
     "iscroll": "^5.2.0",
     "jquery": "^3.1.0",
     "json-server": "^0.8.18",
+    "lodash": "^4.16.2",
     "vue": "^2.0.0-rc.2",
     "vue-resource": "^0.9.3",
     "vue-router": "^2.0.0-rc.3",
