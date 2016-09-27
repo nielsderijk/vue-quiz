@@ -18,7 +18,16 @@
 
         <div class="answers">
 
-          <button v-for="answer in randomQuestion.answers" v-bind:value="answer.mark" class="answer other">
+          <button
+            class="answer"
+            @click="selectAnswer(answer)"
+            v-for="answer in randomQuestion.answers"
+            :class="{
+              'is-true': selectedAnswer === answer && answer.mark || selectedAnswer && answer.mark,
+              'is-false': selectedAnswer === answer && !answer.mark,
+              'disabled': selectedAnswer
+            }"
+          >
             {{ answer.text }}
           </button>
 

@@ -6,6 +6,7 @@ export default {
 
   data() {
     return {
+      selectedAnswer: null,
       title: 'A Nintendo Quiz made in Vue',
       questions: [
         {
@@ -56,11 +57,19 @@ export default {
     }
   },
 
+  // Adds value as a class to button when clicked so it turns green or red
   methods: {
-
+    selectAnswer: function(answer) {
+      if (this.selectedAnswer) {
+        return;
+      }
+       this.selectedAnswer = answer;
+    },
   },
 
   computed: {
+
+    // Shows answers in a random order
     randomQuestion: function () {
       const randomQuestionIndex = Math.floor(Math.random() * this.questions.length);
       const question = this.questions[randomQuestionIndex];
@@ -69,6 +78,9 @@ export default {
       question.answers = answers;
 
       return question;
+    },
+    isAnswerSelected: function(answer) {
+      return this.selectedAnswer === answer;
     }
   },
 

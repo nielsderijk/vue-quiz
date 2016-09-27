@@ -248,7 +248,11 @@
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#313131', endColorstr='#111111',GradientType=0 ); /* IE6-9 */
   }
 
-  &:focus[value=true] {
+  &.disabled {
+    pointer-events: none;
+  }
+
+  &.is-true {
     border: 0px solid green;
     color: white;
     background: #4bbc00; /* Old browsers */
@@ -258,7 +262,7 @@
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4bbc00', endColorstr='#35a000',GradientType=0 ); /* IE6-9 */
   }
 
-  &:focus[value=false] {
+  &.is-false {
     border: 0px solid #cc0000;
     color: white;
     background: #cc0000; /* Old browsers */
