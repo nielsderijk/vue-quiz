@@ -2,17 +2,15 @@
 
 .container {
   position: relative;
-  display: inline-block;
-  background: yellow;
   width: calc(100% - 20px);
-  min-height: 548px;
   max-width: 520px;
   padding: 40px 40px 20px 40px;
   text-align: center;
   background: $colorWhite;
   box-sizing: border-box;
-  font-family: 'Roboto Slab';
   overflow: hidden;
+  font-family: 'Roboto Slab';
+  animation: slideInLeft .8s forwards;
 
   @media screen and (max-width: 520px) {
     width: 100%;
@@ -22,10 +20,8 @@
   }
 
   @media screen and (min-width: 521px) {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+    min-height: 548px;
+    margin: 20px auto;
     border: 1px solid lightgray;
   }
 
@@ -281,7 +277,7 @@
   width: 0;
   height: 6px;
   background: lightblue;
-  animation: timer 9s linear forwards;
+  animation: timer 10s linear forwards;
 
   @-webkit-keyframes timer {
   100% {

@@ -6,17 +6,17 @@
 @import 'layout/layout';
 
 html {
-    font-size: 62.5%;
+  font-size: 62.5%;
 }
 
 body {
   background: $colorBody;
-  overflow: hidden;
   margin: 0;
   padding: 0;
 
   @include respond-to('X_SMALL') {
     background: white !important;
+    overflow: hidden;
   }
 
 }
