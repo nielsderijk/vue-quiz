@@ -53,6 +53,17 @@ export default {
             {text: 'A P-acorn', mark: false}
           ],
         },
+        {
+          id: 5,
+          image: 'https://cdn3.twinfinite.net/wp-content/uploads/2016/07/tumblr_static_4dfdwwm484mccgggkwwg04soo.png',
+          question: 'What is the name of this Pokémon?',
+          answers: [
+            {text: 'Dragonite', mark: true},
+            {text: 'Charizard', mark: false},
+            {text: 'Charmander', mark: false},
+            {text: 'Flygon', mark: false}
+          ],
+        },
       ],
     }
   },
