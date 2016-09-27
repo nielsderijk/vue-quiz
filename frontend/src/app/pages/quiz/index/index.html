@@ -3,7 +3,7 @@
   <header>
   </header>
 
-  <div class="container animated">
+  <div class="container animated" >
 
     <!--<div class="question-number">3.</div>-->
     <!--       <div class="score-bar">
@@ -30,6 +30,16 @@
           >
             {{ answer.text }}
           </button>
+
+          <div v-if="selectedAnswer" class="score">
+
+            <span class="number1">2</span><span class="number2">0</span>
+            <div class="text">POINTS</div>
+
+          </div>
+
+          <div v-else>
+          </div>
 
         </div>
 

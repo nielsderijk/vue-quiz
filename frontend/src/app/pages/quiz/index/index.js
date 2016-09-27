@@ -11,7 +11,7 @@ export default {
       questions: [
         {
           id: 1,
-          image: 'http://www.smartworld.it/wp-content/uploads/2016/06/The-Legend-of-Zelda-Breath-of-Wild-Title-1280x720.png',
+          image: 'http://www.pcgames.de/screenshots/original/2014/12/The_Legend_Of_Zelda_WiiU_01_crop-videogameszone.jpg',
           question: 'Which of these things Link can NOT do in the upcoming Zelda game, Breath of the Wild?',
           answers: [
             {text: 'Swap gender', mark: true},
@@ -44,7 +44,7 @@ export default {
         },
         {
           id: 4,
-          image: 'http://www.mobygames.com/images/shots/l/218714-super-mario-world-snes-screenshot-flying-with-a-cape.png',
+          image: 'http://www.mariowiki.com/images/e/ee/Butter_Bridge_2.png',
           question: 'What power-up in Super Mario World (1991) gives Mario his cape?',
           answers: [
             {text: 'A Feather', mark: true},

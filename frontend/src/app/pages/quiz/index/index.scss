@@ -22,6 +22,7 @@
   @media screen and (min-width: 521px) {
     min-height: 548px;
     margin: 20px auto;
+    border-radius: 1em;
     border: 1px solid lightgray;
   }
 
@@ -125,6 +126,11 @@
   background-size: cover;
   animation: fadeIn .8s forwards;
 	opacity: 0;
+
+  @media screen and (min-width: 521px) {
+    border-radius: 1em;
+  }
+
 }
 
 .question {
@@ -272,18 +278,60 @@
 
 .timer {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 21px;
+  margin: 0 auto;
   width: 0;
   height: 6px;
+  border-radius: 2em;
   background: lightblue;
   animation: timer 10s linear forwards;
 
   @-webkit-keyframes timer {
   100% {
-    width: 100%;
+    width: 438px;
     }
 
+  }
+
+}
+
+.points {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin-top: 25%;
+  font-family: 'Kong Text';
+  line-height: 2.5em;
+  color: $colorWhite;
+  text-shadow: 2px 3px $colorBlack;
+  opacity: .95;
+
+  .text {
+    display: block;
+    text-align: center;
+  }
+
+  .number1, .number2 {
+    color: $colorGold;
+    display: inline-block;
+  }
+
+  .number1 {
+    font-size: 8rem;
+    animation: bounceInLeft .8s forwards;
+  }
+
+  .number2 {
+    font-size: 8rem;
+    animation: bounceInRight .8s forwards;
+  }
+
+  .text {
+    font-size: 2.4rem;
+    color: $colorWhite;
+    animation: fadeInUp .8s forwards;
   }
 
 }
