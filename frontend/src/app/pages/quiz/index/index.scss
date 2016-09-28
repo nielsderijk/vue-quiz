@@ -245,17 +245,28 @@
 
 .timer {
   position: absolute;
-  top: 21px;
+  top: 20px;
   margin: 0 auto;
-  width: 0;
+  width: 438px;
   height: 6px;
   border-radius: 2em;
-  background: $colorGrey;
-  animation: timer 10s linear forwards;
+  background: $colorBody;
 
-  @-webkit-keyframes timer {
-  100% {
-    width: 438px;
+  .time-bar {
+    width: 0;
+    height: 6px;
+    background: $colorGrey;
+    border-radius: 2em;
+    animation: timer 10s linear forwards;
+
+    @-webkit-keyframes timer {
+    100% {
+      width: 438px;
+      }
+    }
+
+    &.stop {
+      animation-play-state: paused;
     }
 
   }

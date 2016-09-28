@@ -24,7 +24,6 @@
           <button
             class="answer"
             @click="selectAnswer(answer)"
-            type="submit"
             v-for="answer in randomQuestion.answers"
             :class="{
               'is-true': selectedAnswer === answer && answer.mark || selectedAnswer && answer.mark,
@@ -53,7 +52,13 @@
 
       </div>
 
-    <div class="timer"></div>
+    <div class="timer">
+      <div
+        class="time-bar"
+        :class="{ 'stop': selectedAnswer }"
+      >
+      </div>
+    </div>
 
   </div>
 

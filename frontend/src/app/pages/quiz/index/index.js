@@ -123,7 +123,7 @@ export default {
       if (selectedAnswer.mark === true) {
         this.count += 20;
       }
-    }
+    },
 
   },
 
