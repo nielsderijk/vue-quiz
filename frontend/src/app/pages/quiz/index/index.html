@@ -4,6 +4,8 @@
   <header>
   </header>
 
+  <center>Total: {{ count }}</center>
+
   <div class="container js-stagger" >
 
     <!--<div class="question-number">3.</div>-->
@@ -22,6 +24,7 @@
           <button
             class="answer"
             @click="selectAnswer(answer)"
+            type="submit"
             v-for="answer in randomQuestion.answers"
             :class="{
               'is-true': selectedAnswer === answer && answer.mark || selectedAnswer && answer.mark,

@@ -250,7 +250,7 @@
   width: 0;
   height: 6px;
   border-radius: 2em;
-  background: lightblue;
+  background: $colorGrey;
   animation: timer 10s linear forwards;
 
   @-webkit-keyframes timer {
@@ -263,7 +263,7 @@
 }
 
 .score {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;

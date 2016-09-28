@@ -7,6 +7,7 @@ export default {
 
   data() {
     return {
+      count: 0,
       selectedAnswer: null,
       viewedQuestions: [],
       title: 'A Nintendo Quiz made in Vue',
@@ -88,6 +89,17 @@ export default {
             {text: 'Nabooru', mark: false}
           ],
         },
+        {
+          id: 8,
+          image: 'https://d13yacurqjgara.cloudfront.net/users/3374/screenshots/197696/attachments/3466/handheld_timeline.png',
+          question: 'With approximately 154 million units shipped worldwide, what is Nintendo\'s best selling handheld to date?',
+          answers: [
+            {text: 'Nintendo DS', mark: true},
+            {text: 'Game Boy', mark: false},
+            {text: 'Nintendo 3DS', mark: false},
+            {text: 'Game Boy Color', mark: false}
+          ],
+        },
       ],
     }
   },
@@ -100,15 +112,18 @@ export default {
 
   methods: {
 
-    // Returns value if answer is correct so button can turn green or red
+    // Returns value if answer is correct so button can turn green or red + updates counter
     selectAnswer: function(answer) {
-
-      // if (this.selectedAnswer) {
-      //   return;
-      // }
        this.selectedAnswer = answer;
-
+       this.updateCount(answer);
     },
+
+    // Updates score when correct answer is clicked
+    updateCount: function(selectedAnswer) {
+      if (selectedAnswer.mark === true) {
+        this.count += 20;
+      }
+    }
 
   },
 
@@ -119,16 +134,6 @@ export default {
       const randomQuestionIndex = Math.floor(Math.random() * this.questions.length);
       const question = this.questions[randomQuestionIndex];
       const answers = _.shuffle(question.answers);
-
-      // check
-
-
-      // check if it's in the array
-      if (_.find(this.viewedQuestions, { id: question.id })) {
-        // already have
-
-        return;
-      }
 
       question.answers = answers;
 
