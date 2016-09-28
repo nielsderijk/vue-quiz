@@ -125,6 +125,11 @@ export default {
       }
     },
 
+
+    close: function () {
+      this.onClose();
+    },
+
   },
 
   computed: {

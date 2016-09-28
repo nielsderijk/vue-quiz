@@ -4,9 +4,17 @@
   <header>
   </header>
 
-  <center>Total: {{ count }}</center>
+  <div class="container js-stagger">
 
-  <div class="container js-stagger" >
+    <div class="total">Total: {{ count }}</div>
+    <div class="timer">
+
+      <div
+        class="time-bar"
+        :class="{ 'stop': selectedAnswer }"
+      >
+      </div>
+    </div>
 
     <!--<div class="question-number">3.</div>-->
     <!--       <div class="score-bar">
@@ -51,14 +59,6 @@
         </div>
 
       </div>
-
-    <div class="timer">
-      <div
-        class="time-bar"
-        :class="{ 'stop': selectedAnswer }"
-      >
-      </div>
-    </div>
 
   </div>
 
