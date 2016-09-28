@@ -1,5 +1,6 @@
-import loader from './../../../utils/loader';
-import layout from '../../../layouts/quiz/quiz';
+// import loader from './../../../utils/loader';
+// import layout from '../../../layouts/quiz/quiz';
+import { TweenMax, TimelineMax } from 'gsap';
 import _ from 'lodash';
 
 export default {
@@ -7,6 +8,7 @@ export default {
   data() {
     return {
       selectedAnswer: null,
+      viewedQuestions: [],
       title: 'A Nintendo Quiz made in Vue',
       questions: [
         {
@@ -64,19 +66,50 @@ export default {
             {text: 'Flygon', mark: false}
           ],
         },
+        {
+          id: 6,
+          image: 'https://sickr.files.wordpress.com/2014/10/mario_kart8_mercedes.jpg?w=1200',
+          question: 'From which car brand are the karts and tires in the Mario Kart 8 DLC Pack released in August 2014?',
+          answers: [
+            {text: 'Mercedes-Benz', mark: true},
+            {text: 'Toyota', mark: false},
+            {text: 'Mazda', mark: false},
+            {text: 'BMW', mark: false}
+          ],
+        },
+        {
+          id: 7,
+          image: 'http://images.nintendolife.com/news/2013/01/ninterview_cosplayer_regina_rikkugrape_marie/attachment/3/original.jpg',
+          question: 'Which Zelda character is cosplayed here?',
+          answers: [
+            {text: 'Saria', mark: true},
+            {text: 'Princess Ruto', mark: false},
+            {text: 'Anju', mark: false},
+            {text: 'Nabooru', mark: false}
+          ],
+        },
       ],
     }
   },
 
+  route: {
+    activate() {
+      // console.log('test');
+    },
+  },
+
   methods: {
 
-    // Adds value as a class to button when clicked so it turns green or red
+    // Returns value if answer is correct so button can turn green or red
     selectAnswer: function(answer) {
-      if (this.selectedAnswer) {
-        return;
-      }
+
+      // if (this.selectedAnswer) {
+      //   return;
+      // }
        this.selectedAnswer = answer;
+
     },
+
   },
 
   computed: {
@@ -86,6 +119,16 @@ export default {
       const randomQuestionIndex = Math.floor(Math.random() * this.questions.length);
       const question = this.questions[randomQuestionIndex];
       const answers = _.shuffle(question.answers);
+
+      // check
+
+
+      // check if it's in the array
+      if (_.find(this.viewedQuestions, { id: question.id })) {
+        // already have
+
+        return;
+      }
 
       question.answers = answers;
 

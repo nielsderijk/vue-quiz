@@ -10,7 +10,6 @@
   box-sizing: border-box;
   overflow: hidden;
   font-family: 'Roboto Slab';
-  animation: slideInLeft .8s forwards;
 
   @media screen and (max-width: 520px) {
     width: 100%;
@@ -288,18 +287,18 @@
 
   .number1 {
     font-size: 8rem;
-    animation: bounceInLeft .8s forwards;
+    animation: tada .8s forwards;
   }
 
   .number2 {
     font-size: 8rem;
-    animation: bounceInRight .8s forwards;
+    animation: tada .8s forwards;
   }
 
   .text {
     font-size: 2.4rem;
     color: $colorWhite;
-    animation: fadeInUp .8s forwards;
+    animation: fadeInUp .4s forwards;
   }
 
 }

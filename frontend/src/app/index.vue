@@ -1,5 +1,7 @@
 <template>
-  <router-view></router-view>
+  <transition v-on:enter="getEnter" v-on:leave="getLeave" v-bind:css="false" type="transition" appear mode="out-in">
+    <router-view></router-view>
+  </transition>
 </template>
 <script>
 
@@ -12,6 +14,7 @@
 
   import store from './store';
   import { router } from './../bootstrap';
+  import HomeTransition from './transitions/home';
 
   export default {
     /**
@@ -30,5 +33,31 @@
     mounted() {
 
     },
+
+    methods: {
+      getEnter(el, done) {
+        window.scrollTo(0, 0);
+
+        switch (this.$route.name) {
+          case 'home.index': {
+            HomeTransition.enter(el, done);
+            break;
+          }
+
+          default: {
+            HomeTransition.enter(el, done);
+            break;
+          }
+        }
+      },
+
+      getLeave(el, done) {
+        done();
+        // HomeTransition.leave(el, done);
+      },
+    },
+
+
+
   };
 </script>

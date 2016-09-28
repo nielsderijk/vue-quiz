@@ -14,20 +14,7 @@ import loader from './utils/loader';
  */
 export default [
   {
-    path: '/quiz',
-    name: 'quiz.index',
-    component: loader.page('quiz', 'index'),
-  },
-
-  {
     path: '/quiz/:uuid',
-    name: 'quiz.index',
-    component: loader.page('quiz', 'index'),
-  },
-
-
-  {
-    path: '/:uuid',
     name: 'quiz.index',
     component: loader.page('quiz', 'index'),
   },
