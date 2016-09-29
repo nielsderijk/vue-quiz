@@ -63,26 +63,6 @@
 
 }
 
-.question-number {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: url(http://n.blck.lv/2w3z2h2c3r3Z/question-number-bg.png) top left no-repeat;
-  background-size: contain;
-  color: white;
-  width: 100px;
-  height: 50px;
-  padding: 24px;
-  display: inline-block;
-  font-size: 1.2rem;
-  line-height: 1.2em;
-  font-weight: 700;
-  text-align: left;
-  animation: fadeIn .8s forwards;
-	opacity: 0;
-  z-index: 100;
-}
-
 .image {
   width: 100%;
   height: 50vw;
@@ -287,9 +267,9 @@
   left: 0;
   width: 100%;
   height: 100%;
-  margin-top: 12%;
+  margin-top: 14%;
   font-family: 'Kong Text';
-  line-height: 2.5em;
+  line-height: 5em;
   color: $colorWhite;
   text-shadow: 2px 3px $colorBlack;
   opacity: .95;
@@ -299,25 +279,24 @@
     text-align: center;
   }
 
-  .number1, .number2 {
+  .plus, .number1, .number2 {
+    margin: 0 -8px;
     color: $colorGold;
     display: inline-block;
-  }
-
-  .number1 {
-    font-size: 8rem;
-    animation: tada .8s forwards;
-  }
-
-  .number2 {
-    font-size: 8rem;
-    animation: tada .8s forwards;
+    font-size: 7rem;
   }
 
   .text {
-    font-size: 2.4rem;
+    font-size: 2.5rem;
     color: $colorWhite;
+  }
+
+  .fadein {
     animation: fadeInUp .4s forwards;
+  }
+
+  .tada {
+    animation: tada 1s forwards;
   }
 
 }

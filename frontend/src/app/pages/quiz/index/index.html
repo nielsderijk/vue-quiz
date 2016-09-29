@@ -45,13 +45,14 @@
           <div v-if="selectedAnswer">
 
             <div v-if="selectedAnswer.mark == true" class="score">
-              <span class="number1">2</span><span class="number2">0</span>
-              <div class="text">POINTS</div>
+              <div class="text tada">CORRECT!</div>
+              <span class="plus fadein">+</span>
+              <span class="number1 fadein">2</span>
+              <span class="number2 fadein">0</span>
             </div>
 
             <div v-else class="score">
-              <span class="number1">0</span>
-              <div class="text">POINTS</div>
+              <div class="text fadein">TOO BAD</div>
             </div>
 
           </div>
