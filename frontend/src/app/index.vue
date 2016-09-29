@@ -1,5 +1,7 @@
 <template>
+  <transition v-on:enter="getEnter" v-on:leave="getLeave" v-bind:css="false" type="transition" appear mode="out-in">
     <router-view></router-view>
+  </transition>
 </template>
 <script>
 
